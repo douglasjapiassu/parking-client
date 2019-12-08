@@ -1,0 +1,25 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-sm">
+        <h2>Adicionar pátio</h2>
+        <form>
+          <div class="form-group">
+            <label for="description">Descrição:</label>
+            <textarea maxlength="255" type="text" [(ngModel)]="parkingLot.description" placeholder="Descrição" id="description" name="description" class="form-control"></textarea>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+                <label for="parkingSpaces">Nº de vagas:</label>
+                <input type="number" [(ngModel)]="parkingLot.parkingSpaces" placeholder="Nº de vagas" id="parkingSpaces" name="parkingSpaces" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="hourlyRate">Taxa/hora:</label>
+              <input currencyMask [(ngModel)]="parkingLot.hourlyRate" placeholder="Taxa/hora" id="hourlyRate" name="hourlyRate" class="form-control" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+            </div>
+          </div>
+        
+          <button pButton class="btn btn-success" (click)="createParkingLot()" label="{{ route.snapshot.queryParams.edit ? 'Salvar' : 'Add'}}"></button>
+        </form>
+      </div>
+    </div>
+  </div>

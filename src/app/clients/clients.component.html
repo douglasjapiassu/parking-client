@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="ui-g">
+    <div class="ui-lg-12 ui-md-12 ui-sm-12 mt-3">
+        <h2>Clientes</h2>
+        <p-table [value]="clients" class="ui-lg-12 ui-md-12 ui-sm-12">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 80px">Id</th>
+                    <th>Nome</th>
+                    <th style="width: 170px">Ação</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-client>
+                <tr>
+                    <td>{{client.id}}</td>
+                    <td>{{client.name}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-danger pull-right" (click)="deleteClient(client)">Remover</button>
+                        <button class="btn btn-sm btn-primary mr-1 pull-right" (click)="editClient(client)">Editar</button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-sm">
+        <h2>Registrar saída</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Veículo:</label>
+            <select class="form-control" [(ngModel)]="exit.vehicleId" name="plate">
+                <option *ngFor="let v of vehicles" value= {{v.id}}>
+                  {{v.plate}}
+                </option>
+             </select>
+          </div>
+        
+          <button pButton class="btn btn-success" (click)="createExit()" label="Registrar saída"></button>
+        </form>
+      </div>
+    </div>
+  </div>

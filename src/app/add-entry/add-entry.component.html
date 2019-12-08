@@ -1,0 +1,19 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-sm">
+        <h2>Registrar entrada</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Veículo:</label>
+            <select class="form-control" [(ngModel)]="entry.vehicleId" name="plate">
+                <option *ngFor="let v of vehicles" value= {{v.id}}>
+                  {{v.plate}}
+                </option>
+             </select>
+          </div>
+        
+          <button pButton class="btn btn-success" (click)="createEntry()" label="Registrar entrada"></button>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,40 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-sm">
+        <h2>Adicionar veículo</h2>
+        <form>
+          <div class="form-group row">
+              <div class="col-md-6">
+                <label for="plate">Placa:</label>
+                <p-inputMask [(ngModel)]="vehicle.plate" mask="aaa-9999" placeholder="Placa" id="plate" name="plate" styleClass="form-control col-md-12"></p-inputMask>
+              </div>
+              <div class="col-md-6">
+                <label for="model">Modelo:</label>
+                <input maxlength="255" type="text" [(ngModel)]="vehicle.model" placeholder="Modelo" id="model" name="model" class="form-control">
+              </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-6">
+              <label for="phone">Cor:</label>
+              <select class="form-control" [(ngModel)]="vehicle.color" name="color">
+                  <option *ngFor="let c of colors" value= {{c.code}}>
+                    {{c.label}}
+                  </option>
+               </select>
+              </div>
+              <div class="col-md-6">
+                <label for="client">Cliente:</label>
+                <select class="form-control" [(ngModel)]="vehicle.client.id" name="clientId">
+                    <option *ngFor="let cl of clients" value= {{cl.id}}>
+                      {{cl.name}}
+                    </option>
+                 </select>
+              </div>
+          </div>
+
+        
+          <button pButton class="btn btn-success" (click)="createVehicle()" label="{{ route.snapshot.queryParams.edit ? 'Salvar' : 'Add'}}"></button>
+        </form>
+      </div>
+    </div>
+  </div>

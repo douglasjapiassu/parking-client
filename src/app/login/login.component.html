@@ -1,0 +1,9 @@
+<form class="form-signin mt-5">
+  <h1 class="h3 mb-3 font-weight-normal text-center">ESTACIONAMENTO</h1>
+  <label for="username" class="sr-only">Usuário</label>
+  <input type="text" id="username" name="username" class="form-control" [(ngModel)]="username" placeholder="Usuário" required="" autofocus="">
+  <label for="password" class="sr-only">Senha</label>
+  <input type="password" id="password" name="username" class="form-control" [(ngModel)]="password" placeholder="Senha" required="">
+  <button class="btn btn-lg btn-primary btn-block" (click)=handleLogin()>Entrar</button>
+  <div *ngIf='invalidLogin'>Login e/ou senha inválido(s)</div>
+</form>

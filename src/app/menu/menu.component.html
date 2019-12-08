@@ -1,0 +1,7 @@
+<header>
+  <p-menubar *ngIf="loginService.isUserLoggedIn()" [model]="listMenu">
+      <div>
+          <button pButton label="Sair" icon="fa fa-sign-out" (click)=handleLogout() style="margin-left:.25em"></button>
+      </div>
+  </p-menubar>
+</header>
