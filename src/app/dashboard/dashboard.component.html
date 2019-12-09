@@ -5,7 +5,7 @@
             <p-chart type="doughnut" [data]="item.chart"></p-chart>
             <p-footer>
                 <button *ngIf="item.showEntry" pButton type="button" label="Registrar entrada" icon="fa fa-sign-in" class="ui-button-success mr-1" (click)="registerEntry(item)"></button>
-                <button pButton type="button" label="Registrar saída" icon="fa fa-close" class="ui-button-danger" (click)="registerExit(item)"></button>
+                <button *ngIf="item.showExit" pButton type="button" label="Registrar saída" icon="fa fa-close" class="ui-button-danger" (click)="registerExit(item)"></button>
             </p-footer>
         </p-card>
       </div>

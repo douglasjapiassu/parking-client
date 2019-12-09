@@ -5,11 +5,21 @@
         <form>
           <div class="form-group">
             <label for="name">Veículo:</label>
-            <select class="form-control" [(ngModel)]="exit.vehicleId" name="plate">
+            <select class="form-control" [(ngModel)]="exit.vehicleId" name="plate" #t (change)="retrieveExitData(t.value)">
                 <option *ngFor="let v of vehicles" value= {{v.id}}>
                   {{v.plate}}
                 </option>
              </select>
+          </div>
+          <div class="form-group row" *ngIf="showInfo">
+            <div class="col-md-6">
+              <label for="stay">Tempo de permanência (minutos):</label>
+              <input id="stay" name="lenghtOfStayInMinutes" [(ngModel)]="exitCalc.lenghtOfStayInMinutes" class="form-control" type="text" size="30" pInputText [disabled]="true" />
+            </div>
+            <div class="col-md-6">
+              <label for="amount">Valor:</label>
+              <input currencyMask class="form-control" name="amount" id="amount" [(ngModel)]="exitCalc.amount" type="text" size="30" pInputText [disabled]="true" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" />
+            </div>
           </div>
         
           <button pButton class="btn btn-success" (click)="createExit()" label="Registrar saída"></button>

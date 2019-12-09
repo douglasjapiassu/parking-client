@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
             id: p.id,
             title: p.description,
             showEntry : p.freeParkingSpaces > 0,
+            showExit : (p.parkingSpaces - p.freeParkingSpaces) > 0,
             chart: {
               labels: ['Livre', 'Ocupado'],
               datasets: [{
